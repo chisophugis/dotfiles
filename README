@@ -1,7 +1,10 @@
 How I have my dotfiles set up (IN PROGRESS).
 
 This should explain a lot:
-$ git --git-dir .dotfiles_git-dir --work-tree ~ status
+
+$ export GIT_DIR=.dotfiles_git-dir
+$ export GIT_WORK_TREE=~
+$ git status
 
 And .dotfiles_git-dir/info/exclude is in the work tree, to serve as a
 ".gitignore" for the repo, but only affecting my dotfiles and not every
