@@ -1,10 +1,13 @@
 How I have my dotfiles set up (IN PROGRESS).
 
-This should explain a lot:
+The setup is self-referential. This should explain a lot:
 
 $ export GIT_DIR=.dotfiles_git-dir
 $ export GIT_WORK_TREE=~
+$ cd
 $ git status
+
+(`source .dotfiles_git-dir/my/git_env-defs` makes this easier)
 
 And .dotfiles_git-dir/info/exclude is in the work tree, to serve as a
 ".gitignore" for the repo, but only affecting my dotfiles and not every
