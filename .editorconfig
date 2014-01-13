@@ -1,0 +1,7 @@
+root = true
+
+[**.js]
+wrap_line_length = 78
+preserve_newlines = false
+indent_style = space
+indent_size = 4

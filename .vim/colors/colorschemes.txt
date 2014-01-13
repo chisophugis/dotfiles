@@ -1,0 +1,16 @@
+terminal
+  256-grayvim
+  darkblue
+  default
+  delek
+  inkpot
+  jellybeans
+  lucius
+  molokai
+  morning !!!
+  wombat256
+  xoria-256
+  zenburn
+
+gui
+  desert

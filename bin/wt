@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# wt - script to show world times
+
+# Show one time.
+# Arguments:
+#	$1 - Thing to print
+#	$2 - Timezone from /usr/share/zoneinfo to use
+t () {
+	echo "$1" "`TZ=$2 date '+%I:%M %p %F'`"
+}
+
+# Tip: You can use tzselect(1) to help find timezones.
+
+(
+
+t Here America/Indiana/Indianapolis
+t Kiev Europe/Kiev
+t Taiwan Asia/Taipei
+#t Japan Asia/Tokyo
+
+) | column -t
+

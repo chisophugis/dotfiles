@@ -1,0 +1,12 @@
+export PATH=~/bin:${PATH}
+
+alias -g ls='ls --color --classify'
+
+autoload -U colors && colors
+export PROMPT="%{$fg[red]%}%n%{$reset_color%}:%~ %{%(?.$fg[green].$fg[red])%}%#%{$reset_color%} "
+# keybindings
+bindkey -v
+bindkey '^R' history-incremental-search-backward
+bindkey '^?' backward-delete-char
+# not sure if I like this that much
+#bindkey ' ' magic-space

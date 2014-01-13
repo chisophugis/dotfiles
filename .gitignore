@@ -1,0 +1,5 @@
+*.sw[po]
+__pycache__
+node_modules
+.ninja_*
+a.out

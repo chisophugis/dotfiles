@@ -1,0 +1,258 @@
+\ProvidesPackage{homework}
+
+\newenvironment
+  {problemset}
+  {\begin{center}\begin{tabular}{|l||l|}\hline}
+  {\\\hline\end{tabular}\end{center}}
+
+\newenvironment
+  {linearproblemset}
+  {\begin{center}\begin{tabular}{|l|}\hline}
+  {\\\hline\end{tabular}\end{center}}
+
+% sectional units suited for homework
+\newcommand{\sect}   [1]{\section*{\S#1}}
+\newcommand{\problem}[1]{\subsection*{\##1}}
+% as discussed elsewhere, exercise is a better name
+\let\exercise=\problem
+
+\renewcommand{\theenumi}{\alph{enumi}}
+
+\let\subgroup=\le
+
+% common sets
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Rp}{\mathbb{R}^p}
+\providecommand{\Rn}{\mathbb{R}^n}
+\newcommand{\Rq}{\mathbb{R}^q}
+\newcommand{\Rr}{\mathbb{R}^r}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\Qpos}{\mathbb{Q}^{\text{\rm pos}}}
+\renewcommand{\P}{\mathbb{P}} % shadow the Pilcrow symbol's macro
+\newcommand{\cantorset}{\mathbb{F}}
+\newcommand{\galoisfield}[1]{\mathrm{GF}(#1)}
+\newcommand{\F}{\mathbb{F}} % a general field
+\newcommand{\continuum}{\mathfrak{c}} % cardinality of the continuum
+
+\newcommand{\True}{\mathbf{T}}
+\newcommand{\False}{\mathbf{F}}
+
+% set macros
+%\def\emptyset{\varnothing} % usual \emptyset is ugly
+\newcommand{\union}{\cup}
+\newcommand{\disjointunion}{\sqcup}
+\newcommand{\intersect}{\cap}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\bigset}[1]{\bigl\{#1\bigr\}}
+\newcommand{\setcompl}[1]{\overline{#1}}
+% setcompl with _f_unctional notation
+\newcommand{\fsetcompl}[1]{\mathcal{C}(#1)}
+\newcommand{\setcard}[1]{\lvert#1\rvert}
+\def\buildersep{:}
+\newcommand{\setbuilder}[2]{\left\{#1\buildersep#2\right\}}
+\newcommand{\divisibleby}{\mid} % mid has class binary op
+\newcommand{\equivalentto}{\Longleftrightarrow}
+
+\newcommand{\compose}{\circ}
+
+% notation for a sequence
+\newcommand{\seq}[1]{(#1)}
+\newcommand{\series}[1]{\sum(#1)}
+\newcommand{\goesto}{\longrightarrow}
+
+\let\del=\nabla
+
+% probability
+\let\given=\mid
+\newcommand{\pr}[1]{p(#1)}
+
+\newcommand{\linearfunctions}[2]{\mathcal{L}(#1#2)}
+
+% real analysis
+\newcommand{\powerset}[1]{\mathcal{P}(#1)}
+\newcommand{\finitepowerset}[1]{\mathcal{F}(#1)}
+\def\inverse{^{-1}} % f\inverse f^{-1}
+\let\inv=\inverse
+
+% use align or alignat to place this kind of side text. There's even an
+% example of it in the amsldoc manual
+\newcommand{\eqnremark}[1]{\text{\small\sl #1}}
+
+% big logical and
+\let\bigland=\bigwedge
+\let\biglor=\bigvee
+\let\biglandsep=\quad
+\def\spacedbigland{\biglandsep\bigland\biglandsep}
+
+\newtheorem*{thm}{Theorem}
+\theoremstyle{definition} % bold heading and roman words.
+\newtheorem*{lemma}{Lemma}
+\newtheorem*{claim}{Claim}
+\newtheorem*{task}{Task}
+
+% a raw \def allows for this nasty \expandafter trick when you need to
+% override the default sizing
+%     \expandafter\bigl\abs{foo\bigr}
+%\providecommand{\abs}[1]{\lvert#1\rvert}
+\def\abs#1{\lvert#1\rvert}
+%\providecommand{\norm}[1]{\lVert#1\rVert}
+\def\norm#1{\lVert#1\rVert}
+\def\floored#1{\lfloor#1\rfloor}
+
+% open ball in \R^p
+\newcommand{\ball}[2]{B_{#1}(#2)}
+\newcommand{\closedball}[2]{\overline{B_{#1}(#2)}}
+\newcommand{\puncturedball}[2]{B_{#1}(#2)\setminus\set{#2}}
+
+\newcommand{\collection}[1]{\{#1\}}
+
+\def\identityfn{\varepsilon}
+
+
+\newenvironment
+  {rowops}
+  {\qquad\begin{matrix}}
+  {\end{matrix}\qquad}
+
+% more semantically oriented names for this symbol
+\let\cross=\times
+\let\by=\times
+
+\let\normalsubgroup=\triangleleft
+
+% for usage like f\maps X \to Y.
+% uses the amsmath \colon command so that it will have the right math
+% character class
+\def\maps{\colon}
+\let\mapping=\maps
+
+% a backward complement to \implies that uses the same spacing
+\def\backwardimplies{\;\Longleftarrow\;}
+
+% \overrightharpoonup
+% taken from http://rguha.net/misc/tipsntricks.html
+\makeatletter
+ \def\rightharpoonupfill@{\arrowfill@\relbar\relbar\rightharpoonup}
+ \newcommand{\overrightharpoonup}{%
+ \mathpalette{\overarrow@\rightharpoonupfill@}}
+\makeatother
+
+\let\picvector=\vector
+\renewcommand{\vector}[1]{{\langle#1\rangle}}
+
+
+\newenvironment
+  {mymatrix}
+  {\begin{bmatrix*}[r]}
+  {\end{bmatrix*}}
+
+\newenvironment
+  {mydet}
+  {\begin{vmatrix*}[r]}
+  {\end{vmatrix*}}
+
+\newenvironment
+  {matrixops}
+  {\begin{matrix*}[l]}
+  {\end{matrix*}}
+
+\newenvironment
+  {alm} % ALigned Math
+  {\[\begin{matrix*}[l]}
+  {\end{matrix*}\]}
+
+
+\def\transpose{^T}
+\def\T{^T}
+
+\def\v#1{\mathbf{#1}}
+
+% use `\\' to separate the components of the column vector
+\newcommand{\columnvector}[1]{\begin{mymatrix}#1\end{mymatrix}}
+% more notationally convenient
+\let\cvec=\columnvector
+% use `&' to separate the components of the row vector
+\newcommand{\rowvector}[1]{\begin{mymatrix}#1\end{mymatrix}}
+
+\DeclareMathOperator{\Res}{Res}
+\DeclareMathOperator{\diam}{diam}
+\DeclareMathOperator{\Log}{Log}
+\DeclareMathOperator{\Arg}{Arg}
+\DeclareMathOperator{\rref}{rref}
+\DeclareMathOperator{\proj}{proj}
+\DeclareMathOperator{\spacespan}{span}
+\DeclareMathOperator{\Span}{Span}
+% amsmath has \ker but not \im
+\DeclareMathOperator{\im}{im}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\lcm}{lcm}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\sgn}{sgn}
+
+\DeclareMathOperator{\cl}{cl}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Inn}{Inn}
+\DeclareMathOperator{\orb}{orb}
+\DeclareMathOperator{\stab}{stab}
+
+\newcommand{\Bartlecite}{[Bartle~1976]}
+\newcommand{\Galliancite}{[Gallian~2012]}
+\newcommand{\Munkrescite}{[Munkres~1997]}
+\newcommand{\closure}[1]{#1^{-}}
+\newcommand{\interior}[1]{#1^{\circ}}
+\newcommand{\RSsum}[2]{S(#1;#2)}
+\let\gradient=\nabla
+\newcommand{\content}[1]{c(#1)}
+
+\newcommand{\Righthand}{\((\Rightarrow)\)}
+\newcommand{\Lefthand}{\((\Leftarrow)\)}
+
+\def\divides{|}
+\def\notdivides{\nmid}
+
+% make `*' behave like `\cdot'
+% \DeclareMathSymbol{*}{\mathbin}{symbols}{"01}
+
+\def\xor{\oplus}
+\let\directproduct=\oplus
+\let\basis=\mathbf
+
+\newcommand{\group}[1]{\langle#1\rangle}
+\newcommand{\generator}[1]{\langle#1\rangle}
+\def\isomorphic{\cong}
+
+\newcommand{\innerproduct}[1]{\langle#1\rangle}
+
+\newcommand{\floor}[1]{\lfloor#1\rfloor}
+\newcommand{\eqclass}[1]{\lbrack#1\rbrack}
+
+\newcommand{\quotient}{/}
+\newcommand{\cosetindex}[2]{(#1:#2)}
+\newcommand{\symmetricgroup}[1]{S_{#1}}
+
+% for \p-groups, \p-adic, etc.
+\def\p{\(p\)\/\nobreakdash}
+
+\def\uniformlygoesto{\text{\raisebox{-2pt}{\(\stackrel{\textstyle\longrightarrow}{\longrightarrow}\)}}\,}
+
+% can also define substar and supstar if needed
+\def\star{^{\ast}}
+\def\supstar{^{\ast}}
+\def\substar{_{\ast}}
+
+\renewcommand{\d}[1]{\,d#1}
+
+\newcommand{\polynomials}[2]{#1[#2]}
+\newcommand{\generatedfield}[2]{#1(#2)}
+\newcommand{\substitute}[1]{\sigma_{#1}}
+\newcommand{\extension}[2]{#1(#2)}
+\newcommand{\extensiondegree}[2]{[#1:#2]}
+
+% same symbol, but a more semantic name
+\def\congruent{\equiv}
+
+\newcommand{\bigO}[1]{\ensuremath{O}(#1)}
+\newcommand{\bigTheta}[1]{\ensuremath{\Theta}(#1)}

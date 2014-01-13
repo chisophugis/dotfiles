@@ -1,0 +1,39 @@
+[user]
+	name = Sean Silva
+	# Need to start phasing this out as I approach graduation.
+	#email = silvas@purdue.edu
+	email = chisophugis@gmail.com
+[core]
+	autocrlf = input
+	safecrlf = true
+	excludesfile = ~/.gitignore
+	deltaBaseCacheLimit = 1G
+[color]
+	ui = true
+[alias]
+	type = cat-file -t
+	dump = cat-file -p
+	graph = log --graph --oneline --all --decorate=short
+	oneline = log --oneline --decorate=short
+	justchanged = diff 'HEAD@{1}..HEAD' # experimental
+	currentbranch = rev-parse --symbolic-full-name --abbrev-ref HEAD
+	# I'm not sure about the separator here. Maybe `--` instead of `,`?
+	fork = !sh -c 'git checkout -b '$1',`git currentbranch`'
+	vfork = !sh -c 'git branch '$1',`git currentbranch`'
+	wd = diff --word=color # experimental
+	update = pull --rebase # mimic the intent of `svn update`
+	# Vital for LLVM development.
+	# Usage:
+	# First, run `git dry-run` to see what you are about to commit
+	# (sometimes git-svn will try to commit spurious things, so make
+	# sure that you are not committing garbage)
+	# Then, do `git sdi` and ensure that each patch you send is one
+	# that you intended to send.
+	dry-run = svn dcommit --dry-run
+	sdi = svn dcommit --interactive
+	# Handy. Sometimes you just want to obliterate everything.
+	pristine = !sh -c 'git clean -dfx && git checkout HEAD'
+[interactive]
+	singlekey = true
+[push]
+	default = simple

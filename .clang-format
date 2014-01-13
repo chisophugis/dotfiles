@@ -1,0 +1,4 @@
+BasedOnStyle: LLVM
+Standard: Cpp11
+Cpp11BracedListStyle: true
+AlwaysBreakTemplateDeclarations: true
