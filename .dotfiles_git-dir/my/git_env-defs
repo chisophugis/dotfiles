@@ -1,0 +1,3 @@
+# Meant to be `source`'d in the shell.
+export GIT_DIR=.dotfiles_git-dir
+export GIT_WORK_TREE=~
