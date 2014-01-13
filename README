@@ -1,0 +1,12 @@
+How I have my dotfiles set up (IN PROGRESS).
+
+This should explain a lot:
+$ git --git-dir .dotfiles_git-dir --work-tree ~ status
+
+And .dotfiles_git-dir/info/exclude is in the work tree, to serve as a
+".gitignore" for the repo, but only affecting my dotfiles and not every
+invocation of git (since ~/.gitignore is one of the default places that git
+looks for ignore patterns).
+
+.dotfiles_git-dir/my/ is where I put things that are purely related to the
+maintenance of my dotfiles in a repository.
