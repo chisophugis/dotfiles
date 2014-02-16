@@ -15,6 +15,11 @@
 \newcommand{\problem}[1]{\subsection*{\##1}}
 % as discussed elsewhere, exercise is a better name
 \let\exercise=\problem
+% To accomodate the strange Stein-Shakarchi numbering.
+\newcommand{\SSchapexercises}[1]{\section*{Chapter #1, Exercises}}
+\newcommand{\SSchapproblems}[1]{\section*{Chapter #1, Problems}}
+\newcommand{\SSexercise}[1]{\subsection*{Exercise \##1}}
+\newcommand{\SSproblem}[1]{\subsection*{Problem \##1}}
 
 \renewcommand{\theenumi}{\alph{enumi}}
 
@@ -98,6 +103,7 @@
 %     \expandafter\bigl\abs{foo\bigr}
 %\providecommand{\abs}[1]{\lvert#1\rvert}
 \def\abs#1{\lvert#1\rvert}
+\def\bigabs#1{\left\lvert#1\right\rvert}
 %\providecommand{\norm}[1]{\lVert#1\rVert}
 \def\norm#1{\lVert#1\rVert}
 \def\floored#1{\lfloor#1\rfloor}
@@ -210,8 +216,10 @@
 \newcommand{\Righthand}{\((\Rightarrow)\)}
 \newcommand{\Lefthand}{\((\Leftarrow)\)}
 
-\def\divides{|}
-\def\notdivides{\nmid}
+\def\divides{\backslash}
+\def\notdivides{\not\divides}
+%\def\divides{|}
+%\def\notdivides{\nmid}
 
 % make `*' behave like `\cdot'
 % \DeclareMathSymbol{*}{\mathbin}{symbols}{"01}
@@ -236,12 +244,17 @@
 % for \p-groups, \p-adic, etc.
 \def\p{\(p\)\/\nobreakdash}
 
+% An important operator. Also could use `\vec \nabla^2`.
+\let\laplacian=\bigtriangleup
+
 \def\uniformlygoesto{\text{\raisebox{-2pt}{\(\stackrel{\textstyle\longrightarrow}{\longrightarrow}\)}}\,}
 
 % can also define substar and supstar if needed
 \def\star{^{\ast}}
 \def\supstar{^{\ast}}
 \def\substar{_{\ast}}
+
+\def\convolve{\ast}
 
 \renewcommand{\d}[1]{\,d#1}
 

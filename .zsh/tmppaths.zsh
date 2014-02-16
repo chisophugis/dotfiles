@@ -29,8 +29,12 @@ path[1,0]=(/opt/qt51/5.1.1/gcc_64/bin)
 alias tclman="man -e tcl"
 alias tkman="man -e tk"
 
-alias vtkpython=~/pg/others/VTK-build/bin/vtkpython
+# For CS530
+#alias vtkpython=~/pg/others/VTK-build/bin/vtkpython
 
 # I don't know what this does without this option, because it doesn't seem
 # to copy to the clipboard.
 alias xclip="xclip -selection clipboard"
+
+export KICAD=/home/sean/pg/others/kicad/installed
+path+=( $KICAD/bin/ )

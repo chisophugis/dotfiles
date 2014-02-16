@@ -255,6 +255,8 @@ autocmd FileType python,java setlocal tabstop=4 shiftwidth=4 softtabstop=4 expan
 "autocmd BufNewFile,BufRead *.d setlocal ft=dtrace
 autocmd FileType dtrace setlocal tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab
 
+autocmd BufNewFile,BufRead .clang-format setlocal ft=yaml
+
 autocmd BufNewFile,BufRead *.fun,*.sig setlocal ft=sml
 
 autocmd BufNewFile,BufRead COMMIT_EDITMSG setlocal textwidth=72
