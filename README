@@ -16,3 +16,16 @@ looks for ignore patterns).
 
 .dotfiles_git-dir/my/ is where I put things that are purely related to the
 maintenance of my dotfiles in a repository.
+
+To do the initial setup:
+
+$ cd
+$ git clone --bare https://github.com/chisophugis/dotfiles.git .dotfiles_git-dir
+$ # Could just source .dotfiles_git-dir/my/git_enf-defs instead of passing
+$ # `--git-dir` and `--work-tree` in this next command.
+$ git --git-dir=.dotfiles_git-dir --work-tree=. checkout -f
+
+`-f` is needed because .git/info/exclude is being checked out from the repo
+*into* the git-dir itself (and so is already present, and git complains).
+Alternatively, you could pass `--template=''` to the git-clone to avoid
+creating the skeleton files in the git-dir.
