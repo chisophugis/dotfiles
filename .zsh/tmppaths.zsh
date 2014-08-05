@@ -8,7 +8,7 @@
 # for <http://www.bravegnu.org/gnu-eprog/index.html>
 #export PATH="$PATH:/home/sean/pg/toolchains/arm-2012.09/bin"
 
-export PATH="$PATH:./node_modules/.bin/"
+export PATH="$PATH:./node_modules/.bin"
 
 export GYP_GENERATORS='ninja'
 
@@ -35,6 +35,3 @@ alias tkman="man -e tk"
 # I don't know what this does without this option, because it doesn't seem
 # to copy to the clipboard.
 alias xclip="xclip -selection clipboard"
-
-export KICAD=/home/sean/pg/others/kicad/installed
-path+=( $KICAD/bin/ )
