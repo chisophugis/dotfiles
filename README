@@ -2,7 +2,7 @@ How I have my dotfiles set up (IN PROGRESS).
 
 The setup is self-referential. This should explain a lot:
 
-$ export GIT_DIR=.dotfiles_git-dir
+$ export GIT_DIR=~/.dotfiles_git-dir
 $ export GIT_WORK_TREE=~
 $ cd
 $ git status
