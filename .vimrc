@@ -202,6 +202,7 @@ autocmd FileType c,cpp,glsl map <C-K> :pyf ~/.vim/clang-format.py<CR>
 autocmd BufNewFile,BufRead *.h setlocal ft=cpp
 
 autocmd BufNewFile,BufRead *.md setlocal ft=
+autocmd BufNewFile,BufRead README setlocal ft= tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " go back to 'algebraic' indenting style
 " we might have a conflict with .h files with the kernel-style rule
@@ -297,6 +298,8 @@ autocmd BufNewFile,BufRead *.inc,*.def setlocal ft=cpp
 autocmd BufNewFile,BufRead *.ninja setlocal ft=ninja
 autocmd Filetype ninja setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
+autocmd BufNewFile,BufRead *.modulemap setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+
 "autocmd BufNewFile,BufRead *.tex setlocal ft=context
 autocmd Filetype context setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd Filetype tex setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
@@ -363,7 +366,7 @@ let g:Imap_UsePlaceHolders = 0
 
 " Stuff for LLVM development. Hardcode this until I can come up with a
 " better way.
-set path+=~/pg/llvm/llvm/include/
+set path+=~/pg/llvm/include/
 
 " This has adverse performance impact on startup time
 call pathogen#infect()

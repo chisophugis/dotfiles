@@ -3,3 +3,5 @@ __pycache__
 node_modules
 .ninja_*
 a.out
+*.pyc
+.DS_Store

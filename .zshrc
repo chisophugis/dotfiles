@@ -12,7 +12,8 @@ alias dv='dirs -v'
 alias pl='print -l'
 
 # make ls and grep a little nicer
-alias ls='ls --color --classify --group-directories-first'
+#alias ls='ls --color --classify --group-directories-first'
+alias ls='ls -G -F' # no Mac equivalent of --group-directories-first
 alias grep='grep --directories=skip --color'
 
 # shorter alias for this commonly used command
@@ -21,7 +22,8 @@ alias lal='ls -al'
 
 # Easier to type. There is a /bin/open symlinked to openvt(1), but I've
 # never used that program.
-alias open=xdg-open
+# On mac it is just `open`.
+#alias open=xdg-open
 
 # in case it isn't symlinked in the filesystem
 alias vi=vim
@@ -116,3 +118,11 @@ export NINJA_STATUS="[%u/%r/%f] "
 # Don't know why python stopped checking .pythonrc by default, but I need
 # this for it to work.
 export PYTHONSTARTUP=~/.pythonrc
+
+# make pbcopy and pbpaste work under tmux
+# http://superuser.com/a/413233/45827
+alias pbcopy='reattach-to-user-namespace pbcopy'
+alias pbpaste='reattach-to-user-namespace pbpaste'
+
+# Raise this a bit.
+ulimit -n 1024
