@@ -16,6 +16,8 @@ export GOPATH=/home/sean/pg/go/
 export GOROOT=/opt/go
 export PATH="$PATH:$GOROOT/bin"
 
+path+=(~/pg/others/arcanist/bin/)
+
 # Note: enabling uniquing of $PATH and friends
 # <http://zsh.sourceforge.net/Contrib/startup/users/debbiep/dot.zshenv>
 #typeset -U path

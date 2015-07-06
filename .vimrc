@@ -122,6 +122,7 @@ vnoremap <leader>T :Tabularize /
 nnoremap <leader>i :set tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab<cr>
 nnoremap <leader>d :set tabstop=8 shiftwidth=8 softtabstop=8 expandtab<cr>
 nnoremap <leader>s :setlocal tabstop=4 shiftwidth=4 softtabstop=4 expandtab<cr>
+nnoremap <leader>S :setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab<cr>
 " 'algebraic' style. Naming stems from the fact that I started using this
 " heavily while working on ~/coding/cpp/algebraic/
 nnoremap <leader>a :setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab<cr>
@@ -367,6 +368,11 @@ let g:Imap_UsePlaceHolders = 0
 " Stuff for LLVM development. Hardcode this until I can come up with a
 " better way.
 set path+=~/pg/llvm/include/
+
+" Does this work?
+set path+=..
+set path+=../..
+set path+=../../..
 
 " This has adverse performance impact on startup time
 call pathogen#infect()

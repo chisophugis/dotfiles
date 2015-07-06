@@ -2,7 +2,17 @@
 
 # TODO: explain use cases for each one
 
+# In conjunction with my script viq (i.e. vgg), this allows doing:
+#     $ gg SomeSearch
+#     $ v
+# The latter command essentially runs `vgg SomeSearch`
+# This is convenient for navigating source repositories. You first narrow
+# down your gg search, then when it is pared down enough you just say `v`
+# to open all the results in vim.
 alias gg='git grep'
+alias v='v$(fc -l -n -1)'
+
+
 alias gcb='git checkout --track -b'
 alias gs='git status'
 alias gap='git add -p'
