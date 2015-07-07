@@ -10,7 +10,7 @@
 # down your gg search, then when it is pared down enough you just say `v`
 # to open all the results in vim.
 alias gg='git grep'
-alias v='v$(fc -l -n -1)'
+alias v='eval "v$(fc -l -n -1)"'
 
 
 alias gcb='git checkout --track -b'
