@@ -238,6 +238,7 @@ autocmd BufNewFile,BufRead *.json setlocal ft=json
 " Mathematica, not matlab.
 autocmd BufNewFile,BufRead *.m setlocal ft=mma
 autocmd BufNewFile,BufRead *.mma setlocal ft=mma
+autocmd BufNewFile,BufRead *.wl setlocal ft=mma
 autocmd FileType mma setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab comments=sr:(*,mb:*,ex:*)
 
 autocmd BufNewFile,BufRead *.qml setlocal ft=qml
