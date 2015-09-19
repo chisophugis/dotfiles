@@ -11,6 +11,8 @@
 # to open all the results in vim.
 alias gg='git grep'
 alias v='eval "v$(fc -l -n -1)"'
+# Does this work?
+# function v { eval "v$(fc -l -n -1)" }
 
 
 alias gcb='git checkout --track -b'

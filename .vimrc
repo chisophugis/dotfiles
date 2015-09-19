@@ -282,12 +282,12 @@ autocmd FileType sql setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType yaml setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 
 " gas, unfortunately
-autocmd BufNewFile,BufRead *.s setlocal ft=asm
-autocmd FileType asm setlocal tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab
+autocmd BufNewFile,BufRead *.s,*.S setlocal ft=asm
+autocmd FileType asm setlocal tabstop=4 shiftwidth=4 softtabstop=4 noexpandtab
 
 " I think I'll be using NASM/YASM for now
 " I might use gas later
-autocmd BufNewFile,BufRead *.asm setlocal ft=nasm
+autocmd BufNewFile,BufRead *.asm setlocal ft=asm
 autocmd FileType nasm setlocal tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab
 
 "for now, I'll be using .inc files as include files for yasm

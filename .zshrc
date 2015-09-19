@@ -114,7 +114,7 @@ else
 fi
 
 # nicer ninja status info
-export NINJA_STATUS="[%u/%r/%f] "
+export NINJA_STATUS="%e - [%u/%r/%f] "
 # Don't know why python stopped checking .pythonrc by default, but I need
 # this for it to work.
 export PYTHONSTARTUP=~/.pythonrc
