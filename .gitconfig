@@ -39,3 +39,5 @@
 	default = simple
 [diff]
 	algorithm = histogram
+[merge]
+	conflictstyle = diff3
