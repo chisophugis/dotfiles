@@ -11,19 +11,32 @@ alias dv='dirs -v'
 # I've realized that this is one of the most common commands that I run
 alias pl='print -l'
 
-# make ls and grep a little nicer
-#alias ls='ls --color --classify --group-directories-first'
-alias ls='ls -G -F' # no Mac equivalent of --group-directories-first
+# make some common utilities a little bit nicer
 alias grep='grep --directories=skip --color'
+case "$(uname)" in
+
+  Darwin)
+    alias ls='ls -G -F' # no Mac equivalent of --group-directories-first
+
+    ;;
+
+  Linux)
+    alias ls='ls --color --classify --group-directories-first'
+
+    # Easier to type. There is a /bin/open symlinked to openvt(1), but I've
+    # never used that program.
+    # On mac it is already just `open`.
+    alias open=xdg-open
+
+    ;;
+
+  *)
+    ;;
+esac
 
 # shorter alias for this commonly used command
 alias ll='ls -l'
 alias lal='ls -al'
-
-# Easier to type. There is a /bin/open symlinked to openvt(1), but I've
-# never used that program.
-# On mac it is just `open`.
-#alias open=xdg-open
 
 # in case it isn't symlinked in the filesystem
 alias vi=vim
