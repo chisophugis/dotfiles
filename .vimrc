@@ -63,7 +63,7 @@ set guioptions=agif
 set noesckeys
 
 "use gq to do the equivalent of :!fmt
-set textwidth=75
+set textwidth=70
 
 " sane default: most code using tabs uses 8-space tabs
 set tabstop=8

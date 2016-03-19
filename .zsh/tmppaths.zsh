@@ -28,6 +28,8 @@ path+=(~/pg/others/arcanist/bin/)
 # <http://www.zsh.org/mla/workers/2013/msg00044.html>
 path[1,0]=(/opt/qt51/5.1.1/gcc_64/bin)
 
+path[1,0]=(/opt/llvm36/bin)
+
 alias tclman="man -e tcl"
 alias tkman="man -e tk"
 
@@ -37,5 +39,7 @@ alias tkman="man -e tk"
 # I don't know what this does without this option, because it doesn't seem
 # to copy to the clipboard.
 alias xclip="xclip -selection clipboard"
+
+export NUPIC_CORE=/home/sean/pg/others/numenta/nupic.core
 
 path+=(/opt/clion-2016.1.2/bin)
