@@ -5,3 +5,4 @@ node_modules
 a.out
 *.pyc
 .DS_Store
+.idea

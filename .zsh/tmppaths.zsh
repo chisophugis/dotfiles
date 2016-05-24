@@ -37,3 +37,5 @@ alias tkman="man -e tk"
 # I don't know what this does without this option, because it doesn't seem
 # to copy to the clipboard.
 alias xclip="xclip -selection clipboard"
+
+path+=(/opt/clion-2016.1.2/bin)
