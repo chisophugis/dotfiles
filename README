@@ -29,3 +29,7 @@ $ git --git-dir=.dotfiles_git-dir --work-tree=. checkout -f
 *into* the git-dir itself (and so is already present, and git complains).
 Alternatively, you could pass `--template=''` to the git-clone to avoid
 creating the skeleton files in the git-dir.
+
+
+After checking things out, you will want to install zsh, vim, and git and
+edit /etc/passwd to use /usr/bin/zsh instead of /bin/bash for your user.
