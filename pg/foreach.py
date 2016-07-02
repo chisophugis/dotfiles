@@ -14,6 +14,10 @@ REPOS = [
 ]
 
 def main(args):
+    if not args:
+        print('Empty args list. No command?', file=sys.stderr)
+        return 1
+
     for repo in REPOS:
         print('=' * 36)
         print(repo)
@@ -25,4 +29,6 @@ def main(args):
         output = subprocess.check_output(args, cwd=repo)
         print(output)
 
-main(sys.argv[1:])
+    return 0
+
+sys.exit(main(sys.argv[1:]))
