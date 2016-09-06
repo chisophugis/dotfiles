@@ -132,7 +132,10 @@ nnoremap <leader>rv :source $MYVIMRC<cr>
 nnoremap <leader>eg :tabedit $MYGVIMRC<cr>
 
 nnoremap <leader>w :set invwrap<cr>
-nnoremap <leader>v :tabe %<cr>
+" For some reason this stopped putting you at the same line you were
+" already on.
+"nnoremap <leader>v :tabe %<cr>
+nnoremap <leader>v :execute ":tabe +" . line(".") . " %"<cr>
 nnoremap <leader>V <c-w>T
 
 " experimental
