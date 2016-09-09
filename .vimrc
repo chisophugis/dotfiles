@@ -213,6 +213,7 @@ autocmd BufNewFile,BufRead README setlocal ft= tabstop=2 shiftwidth=2 softtabsto
 autocmd BufNewFile,BufRead *.cpp,*.cc,*.hpp,*.hh setlocal ft=cpp
 autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType cpp.doxygen setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab comments^=:///
+autocmd BufNewFile,BufRead *.cuh setlocal ft=cuda
 
 autocmd BufNewFile,BufRead *.gyp,*.gypi setlocal ft=python
 
