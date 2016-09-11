@@ -28,7 +28,7 @@ path+=(~/pg/others/arcanist/bin/)
 # <http://www.zsh.org/mla/workers/2013/msg00044.html>
 path[1,0]=(/opt/qt51/5.1.1/gcc_64/bin)
 
-path[1,0]=(/opt/llvm36/bin)
+path[1,0]=(/opt/llvm38/bin)
 
 alias tclman="man -e tcl"
 alias tkman="man -e tk"
