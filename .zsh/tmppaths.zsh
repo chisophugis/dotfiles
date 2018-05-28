@@ -13,8 +13,8 @@ export PATH="$PATH:./node_modules/.bin"
 export GYP_GENERATORS='ninja'
 
 export GOPATH=/home/sean/pg/go/
-export GOROOT=/opt/go
-export PATH="$PATH:$GOROOT/bin"
+#export GOROOT=/opt/go
+#export PATH="$PATH:$GOROOT/bin"
 
 path+=(~/pg/others/arcanist/bin/)
 
@@ -28,7 +28,7 @@ path+=(~/pg/others/arcanist/bin/)
 # <http://www.zsh.org/mla/workers/2013/msg00044.html>
 path[1,0]=(/opt/qt51/5.1.1/gcc_64/bin)
 
-path[1,0]=(/opt/llvm38/bin)
+path[1,0]=(/opt/clang+llvm-5.0.1-x86_64-linux-gnu-ubuntu-16.04/bin)
 
 alias tclman="man -e tcl"
 alias tkman="man -e tk"
@@ -43,3 +43,14 @@ alias xclip="xclip -selection clipboard"
 export NUPIC_CORE=/home/sean/pg/others/numenta/nupic.core
 
 path+=(/opt/clion-2016.1.2/bin)
+path+=(~/.cargo/bin)
+
+#. /home/sean/pg/others/torch/install/bin/torch-activate
+
+
+# Following:
+# https://alliseesolutions.wordpress.com/2016/09/08/install-gpu-tensorflow-from-sources-w-ubuntu-16-04-and-cuda-8-0-rc/
+# Also add the path to CUPTI.
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/local/cuda/lib64:/usr/local/cuda/extras/CUPTI/lib64"
+export CUDA_HOME=/usr/local/cuda
+export PATH="$CUDA_HOME/bin:$PATH"

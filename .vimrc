@@ -33,6 +33,8 @@ set exrc
 set secure
 
 set hlsearch
+" Some ubuntu 16.04 packages apparently have an issue with autochdir?
+" http://vi.stackexchange.com/questions/7464/autochdir-working-with-sp-but-not-e
 set autochdir
 set nonumber
 set autoindent
@@ -200,7 +202,7 @@ autocmd FileType c setlocal tabstop=8 shiftwidth=2 softtabstop=2 expandtab
 "autocmd BufNewFile,BufRead *.c,*.cpp,*.cc setlocal tabstop=8 shiftwidth=8 softtabstop=8 noexpandtab
 
 " Clang-format works pretty well for GLSL too ;)
-autocmd FileType c,cpp,glsl map <C-K> :pyf ~/.vim/clang-format.py<CR>
+autocmd FileType c,cpp,glsl,cuda map <C-K> :pyf ~/.vim/clang-format.py<CR>
 " Generally, there is a conflict between C and C++ header files, since in a
 " lot of projects C++ headers are named with a .h extension.
 autocmd BufNewFile,BufRead *.h setlocal ft=cpp
@@ -211,9 +213,11 @@ autocmd BufNewFile,BufRead README setlocal ft= tabstop=2 shiftwidth=2 softtabsto
 " go back to 'algebraic' indenting style
 " we might have a conflict with .h files with the kernel-style rule
 autocmd BufNewFile,BufRead *.cpp,*.cc,*.hpp,*.hh setlocal ft=cpp
-autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd FileType cpp,cuda setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd FileType cpp.doxygen setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab comments^=:///
-autocmd BufNewFile,BufRead *.cuh setlocal ft=cuda
+autocmd BufNewFile,BufRead *.cuh,*.cu.cc setlocal ft=cuda
+" Make vim's omnicomplete be able to see cuda headers.
+autocmd FileType cuda setlocal path+=/usr/local/cuda/include/
 
 autocmd BufNewFile,BufRead *.gyp,*.gypi setlocal ft=python
 

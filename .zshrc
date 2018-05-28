@@ -61,6 +61,9 @@ source $MY_ZSH_DIR/z/z.sh
 
 fpath=(~/.zsh/completion $fpath)
 
+# Suggested by Bazel autocompletion script.
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
 #autoload -Uz compinit
 #compinit
 
